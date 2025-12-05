@@ -1,66 +1,102 @@
+<!-- VERSION A — Structure identique, style minimal, clean, Apple‑like -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Metrey – Designer produit & service</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metrey — Designer Produit & Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #fafafa;
+      --fg: #111;
+      --fg-soft: #555;
+      --accent: #000;
+      --radius: 18px;
+    }
     body {
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: black;
-      background: #fdfdfd;
-      line-height: 1.5;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
     }
-
     .container {
-      max-width: 800px;
-      padding: 60px 30px;
+      max-width: 760px;
       margin: 0 auto;
+      padding: 72px 24px;
+      text-align: center;
     }
-
+    header img {
+      width: 110px;
+      opacity: 0.94;
+      margin-bottom: 36px;
+    }
     h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
+      font-size: 2.5rem;
+      line-height: 1.15;
+      margin: 0 0 14px;
+      font-weight: 600;
     }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      max-width: 600px;
+    p.desc {
+      margin: 0 auto 34px;
+      font-size: 1.15rem;
+      max-width: 560px;
+      color: var(--fg-soft);
+      line-height: 1.55;
     }
-
-    a {
-      color: black;
-      font-weight: bold;
-      text-decoration: underline;
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 48px;
     }
-
-    .footer {
-      margin-top: 60px;
+    .links a {
+      text-decoration: none;
+      color: var(--fg);
+      border: 1px solid #ddd;
+      padding: 14px 22px;
+      border-radius: var(--radius);
+      transition: 0.25s ease;
+      background: white;
+    }
+    .links a:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    footer {
+      margin-top: 80px;
       font-size: 0.9rem;
-      color: #666;
+      color: #999;
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-    <h1>Metrey</h1>
-    <p>Designer produit / service spécialisée dans les environnements publics, les workflows complexes et la structuration d'écosystèmes numériques.</p>
+    <header>
+      <img src="logo-mo_black-bg_DEF.svg" alt="Metrey Logo">
+    </header>
 
-    <p>👉 Mon portfolio est disponible ici :</p>
-    <p>
-      <a href="https://www.figma.com/proto/jErOVfmeUILiSDC4JbnW4o/Portfolio?node-id=0-1&p=f&viewport=-1373,-1201,0.22&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4437:6523" target="_blank">
-        Voir mon portfolio
-      </a>
+    <h1>Designer de service & produit</h1>
+    <p class="desc">
+      Je conçois des services numériques lisibles, cohérents et réellement centrés
+      sur les besoins humains. J'aime rendre les systèmes complexes plus faciles,
+      plus intuitifs, plus humains.
     </p>
 
-    <div class="footer">
-      © 2025 — Metrey Design
+    <div class="links">
+      <a href="https://www.figma.com" target="_blank">Portfolio</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="mailto:metrey.om@gmail.com">Email</a>
+      <a href="cv.pdf" target="_blank">Télécharger mon CV</a>
     </div>
+
+    <footer>
+      © 2025 – Metrey
+    </footer>
   </div>
 </body>
 </html>
