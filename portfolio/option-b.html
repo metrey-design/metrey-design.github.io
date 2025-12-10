@@ -3,41 +3,60 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Metrey OM — Portfolio V2 (Option B)</title>
-  <meta name="description" content="Portfolio Metrey OM - Option B : UI fidèle, responsive.">
+  <title>Metrey OM — Portfolio V2 (Option B - ajustée)</title>
+  <meta name="description" content="Portfolio Metrey OM - Option B : UI fidèle, responsive, hero full screen.">
+  <!-- Google Font (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --max-w:1100px; --accent:#0a58ca; --text:#111; --muted:#6b7280; --bg:#fff;
-      --radius:12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-      Roboto, "Helvetica Neue", Arial;
+      --max-w:1100px;
+      --accent:#0a58ca;
+      --text:#0f1720;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --radius:12px;
+      --gap:20px;
+      --container-pad:28px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    *{box-sizing:border-box} body{margin:0;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
-    .wrap{max-width:var(--max-w);margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;background:linear-gradient(#fff,#fff);border-bottom:1px solid #f0f0f0;padding:12px 0;z-index:40}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.45;font-weight:400}
+    .wrap{max-width:var(--max-w);margin:0 auto;padding:var(--container-pad)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:saturate(1.1) blur(4px);border-bottom:1px solid #f1f5f9;padding:12px 0;z-index:40}
     .brand{font-weight:700;letter-spacing:.2px}
     nav{display:flex;gap:14px;align-items:center}
-    a.navlink{color:var(--text);text-decoration:none;padding:6px 10px;border-radius:8px}
+    a.navlink{color:var(--text);text-decoration:none;padding:6px 10px;border-radius:8px;font-weight:600;font-size:15px}
     a.navlink.active{background:#f7f9ff}
-    .btn{padding:8px 12px;border-radius:10px;text-decoration:none;border:1px solid transparent;cursor:pointer}
-    .btn.primary{background:var(--accent);color:#fff}
-    .btn.ghost{background:transparent;border:1px solid #e6e8ee}
-    .hamburger{display:none;background:none;border:0;font-size:20px}
-    /* Hero */
-    .hero{display:flex;gap:24px;align-items:flex-start;margin:28px 0}
-    .hero-left{flex:1}
-    .hero h1{font-size:30px;margin:0 0 12px;line-height:1.05}
-    .lead{color:var(--muted);margin:0 0 14px}
-    .hero-ctas{display:flex;gap:10px}
-    .availability{font-size:13px;color:var(--muted);margin-top:8px}
-    /* Projects */
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:22px}
-    .card{background:#fff;border:1px solid #eee;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:220px;box-shadow:0 6px 18px rgba(12,16,30,0.04)}
-    .cover{height:140px;background:linear-gradient(135deg,#e8eefc,#f7f9ff);display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--muted)}
-    .card-body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
-    .meta{font-size:12px;color:var(--muted)}
-    .excerpt{font-size:14px;color:#222;flex:1}
-    .cta-row{margin-top:8px}
-    .footer{border-top:1px solid #eee;padding:22px 0;margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .btn{padding:9px 14px;border-radius:10px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-weight:600}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .btn.ghost{background:transparent;border:1px solid #e6e8ee;color:var(--text)}
+    .hamburger{display:none;background:none;border:0;font-size:20px;cursor:pointer}
+    /* HERO - full screen */
+    .hero-wrap{min-height:100vh;display:flex;align-items:center}
+    .hero{display:flex;gap:28px;align-items:flex-start;width:100%}
+    .hero-left{flex:1;max-width:780px}
+    .hero h1{font-size:40px;margin:0 0 14px;line-height:1.03;font-weight:800;letter-spacing:-0.02em}
+    .lead{color:var(--muted);margin:0 0 18px;font-size:16px;max-width:58ch}
+    .hero-ctas{display:flex;gap:12px;margin-top:8px}
+    .availability{font-size:13px;color:var(--muted);margin-top:12px}
+    /* right card in hero */
+    .hero-side{width:320px;max-width:34%;min-width:220px}
+    .side-card{background:linear-gradient(180deg,#f8fafc,#ffffff);padding:18px;border-radius:12px;border:1px solid #eef2ff}
+    .side-card strong{display:block;margin-bottom:6px}
+    /* Projects full width single-col */
+    .projects{display:flex;flex-direction:column;gap:20px;margin-top:28px}
+    .card{background:#fff;border:1px solid #f0f3ff;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 30px rgba(12,16,30,0.04)}
+    .cover{height:240px;background:linear-gradient(135deg,#e8eefc,#f7f9ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted);font-size:18px}
+    .card-body{padding:18px;display:flex;flex-direction:column;gap:10px}
+    .card-body h3{margin:0;font-size:18px;font-weight:700}
+    .meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em}
+    .excerpt{font-size:15px;color:#222}
+    .cta-row{margin-top:12px}
+    /* About teaser */
+    .about-teaser{margin:32px 0;padding:18px;background:#fbfbff;border-radius:12px}
+    /* Footer */
+    .footer{border-top:1px solid #eee;padding:22px 0;margin-top:34px;display:flex;align-items:center;justify-content:space-between;gap:10px}
     .sig{height:26px;margin-left:8px;opacity:.95}
     /* Modal */
     .modal{display:none;position:fixed;inset:0;align-items:center;justify-content:center;z-index:90}
@@ -47,15 +66,18 @@
     .modal-image{height:140px;border-radius:8px;background:linear-gradient(135deg,#fef3c7,#fee2e2);display:block;margin-bottom:12px}
     .modal-close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:22px;cursor:pointer}
     /* Responsive */
-    @media (max-width:900px){
-      .projects{grid-template-columns:1fr}
+    @media (max-width:1000px){
       .hero{flex-direction:column}
-      .hamburger{display:block}
-      nav{display:none}
+      .hero-side{width:100%;max-width:none;order:2}
+      .hero-left{order:1}
+      .cover{height:200px}
     }
-    @media (max-width:420px){
-      .hero h1{font-size:22px}
-      .cover{height:120px}
+    @media (max-width:640px){
+      .wrap{padding:18px}
+      .hero h1{font-size:28px}
+      .brand{font-size:15px}
+      nav{display:none}
+      .hamburger{display:block}
     }
   </style>
 </head>
@@ -63,9 +85,9 @@
   <div class="wrap">
     <header>
       <div class="brand">Metrey OM</div>
-      <nav>
+      <nav aria-label="Menu principal">
         <a class="navlink" href="index.html#projects">Selected works</a>
-        <a class="navlink" href="index.html">About</a>
+        <a class="navlink" href="about.html">About</a>
       </nav>
       <div style="display:flex;gap:10px;align-items:center">
         <button class="btn ghost" id="contactBtn">Get in touch</button>
@@ -73,82 +95,74 @@
       </div>
     </header>
 
-    <main>
-      <section class="hero">
+    <!-- HERO full height -->
+    <section class="hero-wrap" aria-label="Introduction">
+      <div class="hero">
         <div class="hero-left">
-          <h1>Designer qui réconcilie humains et systèmes</h1>
-          <p class="lead">J’aime structurer les parcours complexes, clarifier les flux métier et produire des interfaces claires et durables.</p>
+          <h1>Designer qui réconcilie<br>humains et systèmes</h1>
+          <p class="lead">J’aide les organisations à clarifier des parcours complexes, structurer des workflows métier et produire des interfaces utiles et durables.</p>
           <div class="hero-ctas">
             <a class="btn primary" href="#projects">Voir mon travail</a>
             <a class="btn" href="assets/cv.pdf" target="_blank">Mon CV</a>
           </div>
           <p class="availability">Actuellement disponible pour de nouveaux projets</p>
         </div>
-        <div style="width:320px;max-width:35%;">
-          <div style="background:linear-gradient(180deg,#f8fafc,#ffffff);padding:18px;border-radius:12px;border:1px solid #f0f3ff">
+
+        <aside class="hero-side" aria-hidden="true">
+          <div class="side-card">
             <strong>Focus</strong>
-            <p style="margin:8px 0 0;color:var(--muted)">Service design · Product design · Workflows métier</p>
+            <p style="margin:0;color:var(--muted)">Service design · Product design · Workflows métier</p>
           </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Projects (single column full width cards) -->
+    <section id="projects" class="projects" aria-label="Selected works">
+      <!-- Project 1 -->
+      <article class="card" role="article" aria-labelledby="p1">
+        <div class="cover" aria-hidden="true">Image placeholder — projet 1</div>
+        <div class="card-body">
+          <h3 id="p1">Unifier un écosystème multi-usagers</h3>
+          <div class="meta">Product · UX · UI · Stratégie</div>
+          <p class="excerpt">Cadrage, discovery, prototypage et accompagnement jusqu'à la livraison — résumé court du challenge.</p>
+          <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
         </div>
-      </section>
+      </article>
 
-      <section id="projects" class="projects" aria-label="Selected works">
-        <!-- Project 1 -->
-        <article class="card">
-          <div class="cover">Project — cover visuel</div>
-          <div class="card-body">
-            <h3 style="margin:0;font-size:16px">Unifier un écosystème multi-usagers</h3>
-            <div class="meta">Product · UX · UI · Stratégie</div>
-            <p class="excerpt">Cadrage, discovery, prototypage et accompagnement jusqu'à la livraison.</p>
-            <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
-          </div>
-        </article>
+      <!-- Project 2 -->
+      <article class="card" role="article" aria-labelledby="p2">
+        <div class="cover" aria-hidden="true">Image placeholder — projet 2</div>
+        <div class="card-body">
+          <h3 id="p2">Fluidifier l'accès aux aides sociales</h3>
+          <div class="meta">Service design · Recherche</div>
+          <p class="excerpt">Réduction des frictions, coordination multi-acteurs et mise en place d’un parcours centralisé.</p>
+          <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
+        </div>
+      </article>
 
-        <!-- Project 2 -->
-        <article class="card">
-          <div class="cover">Projet 2 — cover</div>
-          <div class="card-body">
-            <h3 style="margin:0;font-size:16px">Fluidifier l'accès aux aides sociales</h3>
-            <div class="meta">Service design · Recherche</div>
-            <p class="excerpt">Simplification des parcours et coordination multi-acteurs.</p>
-            <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
-          </div>
-        </article>
+      <!-- Project 3 -->
+      <article class="card" role="article" aria-labelledby="p3">
+        <div class="cover" aria-hidden="true">Image placeholder — projet 3</div>
+        <div class="card-body">
+          <h3 id="p3">Dashboard interne — optimisation des workflows</h3>
+          <div class="meta">Product · UI</div>
+          <p class="excerpt">Design de composants, états et flows pour des usages internes complexes.</p>
+          <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
+        </div>
+      </article>
+    </section>
 
-        <!-- Duplicate as placeholders -->
-        <article class="card">
-          <div class="cover">Projet 3</div>
-          <div class="card-body">
-            <h3 style="margin:0;font-size:16px">Dashboard interne</h3>
-            <div class="meta">Product · UI</div>
-            <p class="excerpt">Design de composants, états, et workflows métier.</p>
-            <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
-          </div>
-        </article>
+    <section class="about-teaser">
+      <strong>À propos</strong>
+      <p style="margin:8px 0 0;color:var(--muted)">Design produit & service — <a href="about.html" style="text-decoration:underline;color:var(--accent)">Voir la page About</a></p>
+    </section>
 
-        <article class="card">
-          <div class="cover">Projet 4</div>
-          <div class="card-body">
-            <h3 style="margin:0;font-size:16px">Onboarding & services</h3>
-            <div class="meta">UX · Recherche</div>
-            <p class="excerpt">Ateliers terrain, tests utilisateurs, itérations rapides.</p>
-            <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
-          </div>
-        </article>
-      </section>
-
-      <section style="margin-top:26px;background:#fbfbff;padding:14px;border-radius:10px">
-        <strong>À propos</strong>
-        <p style="margin:8px 0 0;color:var(--muted)">Designer produit & service — lien vers la page about.</p>
-        <p style="margin:8px 0 0"><a href="about.html" class="navlink">Voir ma page About</a></p>
-      </section>
-    </main>
-
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <div>© 2025 Metrey OM</div>
       <div style="display:flex;align-items:center">
-        <img class="sig" src="https://via.placeholder.com/64x26?text=SIG" alt="sig">
-        <img class="sig" src="https://via.placeholder.com/64x26?text=SIG" alt="sig">
+        <img class="sig" src="https://via.placeholder.com/64x26?text=SIG" alt="signature 1">
+        <img class="sig" src="https://via.placeholder.com/64x26?text=SIG" alt="signature 2">
       </div>
       <div style="display:flex;gap:10px">
         <a href="assets/cv.pdf" target="_blank">CV</a>
@@ -174,24 +188,29 @@
   </div>
 
   <script>
-    // interactions: modal + hamburger
     (function(){
+      // Modal
       const contactBtn = document.getElementById('contactBtn');
       const modal = document.getElementById('modal');
       const closeModal = document.getElementById('closeModal');
       const backdrop = document.getElementById('backdrop');
-      const hamb = document.getElementById('hamb');
-      const nav = document.querySelector('nav');
 
       function openModal(){ modal.classList.add('show'); modal.setAttribute('aria-hidden','false'); }
-      function hideModal(){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); }
-      if(contactBtn) contactBtn.addEventListener('click', openModal);
-      if(closeModal) closeModal.addEventListener('click', hideModal);
-      if(backdrop) backdrop.addEventListener('click', hideModal);
+      function closeModal(){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); }
 
-      hamb && hamb.addEventListener('click', ()=> {
-        if(nav.style.display === 'flex'){ nav.style.display = 'none'; } else { nav.style.display = 'flex'; nav.style.flexDirection='column'; nav.style.position='absolute'; nav.style.right='16px'; nav.style.top='64px'; nav.style.background='#fff'; nav.style.padding='10px'; nav.style.boxShadow='0 8px 20px rgba(12,16,30,0.08)'; }
-      });
+      contactBtn && contactBtn.addEventListener('click', openModal);
+      closeModal && closeModal.addEventListener('click', closeModal);
+      backdrop && backdrop.addEventListener('click', closeModal);
+
+      // Hamburger (show/hide nav)
+      const hamb = document.getElementById('hamb');
+      const nav = document.querySelector('nav');
+      if(hamb){
+        hamb.addEventListener('click', ()=> {
+          if(nav.style.display === 'flex'){ nav.style.display = 'none'; }
+          else { nav.style.display = 'flex'; nav.style.flexDirection='column'; nav.style.position='absolute'; nav.style.right='16px'; nav.style.top='64px'; nav.style.background='#fff'; nav.style.padding='10px'; nav.style.boxShadow='0 8px 20px rgba(12,16,30,0.08)'; }
+        });
+      }
     })();
   </script>
 </body>
