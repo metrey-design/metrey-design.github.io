@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Metrey OM — Portfolio V2 (Option B)</title>
+  <meta name="description" content="Portfolio Metrey OM - Option B : UI fidèle, responsive.">
+  <style>
+    :root{
+      --max-w:1100px; --accent:#0a58ca; --text:#111; --muted:#6b7280; --bg:#fff;
+      --radius:12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box} body{margin:0;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--max-w);margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;background:linear-gradient(#fff,#fff);border-bottom:1px solid #f0f0f0;padding:12px 0;z-index:40}
+    .brand{font-weight:700;letter-spacing:.2px}
+    nav{display:flex;gap:14px;align-items:center}
+    a.navlink{color:var(--text);text-decoration:none;padding:6px 10px;border-radius:8px}
+    a.navlink.active{background:#f7f9ff}
+    .btn{padding:8px 12px;border-radius:10px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+    .btn.primary{background:var(--accent);color:#fff}
+    .btn.ghost{background:transparent;border:1px solid #e6e8ee}
+    .hamburger{display:none;background:none;border:0;font-size:20px}
+    /* Hero */
+    .hero{display:flex;gap:24px;align-items:flex-start;margin:28px 0}
+    .hero-left{flex:1}
+    .hero h1{font-size:30px;margin:0 0 12px;line-height:1.05}
+    .lead{color:var(--muted);margin:0 0 14px}
+    .hero-ctas{display:flex;gap:10px}
+    .availability{font-size:13px;color:var(--muted);margin-top:8px}
+    /* Projects */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:22px}
+    .card{background:#fff;border:1px solid #eee;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:220px;box-shadow:0 6px 18px rgba(12,16,30,0.04)}
+    .cover{height:140px;background:linear-gradient(135deg,#e8eefc,#f7f9ff);display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--muted)}
+    .card-body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+    .meta{font-size:12px;color:var(--muted)}
+    .excerpt{font-size:14px;color:#222;flex:1}
+    .cta-row{margin-top:8px}
+    .footer{border-top:1px solid #eee;padding:22px 0;margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .sig{height:26px;margin-left:8px;opacity:.95}
+    /* Modal */
+    .modal{display:none;position:fixed;inset:0;align-items:center;justify-content:center;z-index:90}
+    .modal.show{display:flex}
+    .backdrop{position:absolute;inset:0;background:rgba(0,0,0,.42)}
+    .modal-card{position:relative;background:white;padding:18px;border-radius:12px;max-width:540px;width:92%;z-index:91;box-shadow:0 20px 40px rgba(12,16,30,0.15)}
+    .modal-image{height:140px;border-radius:8px;background:linear-gradient(135deg,#fef3c7,#fee2e2);display:block;margin-bottom:12px}
+    .modal-close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:22px;cursor:pointer}
+    /* Responsive */
+    @media (max-width:900px){
+      .projects{grid-template-columns:1fr}
+      .hero{flex-direction:column}
+      .hamburger{display:block}
+      nav{display:none}
+    }
+    @media (max-width:420px){
+      .hero h1{font-size:22px}
+      .cover{height:120px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Metrey OM</div>
+      <nav>
+        <a class="navlink" href="index.html#projects">Selected works</a>
+        <a class="navlink" href="index.html">About</a>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="btn ghost" id="contactBtn">Get in touch</button>
+        <button class="hamburger" id="hamb">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Designer qui réconcilie humains et systèmes</h1>
+          <p class="lead">J’aime structurer les parcours complexes, clarifier les flux métier et produire des interfaces claires et durables.</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#projects">Voir mon travail</a>
+            <a class="btn" href="assets/cv.pdf" target="_blank">Mon CV</a>
+          </div>
+          <p class="availability">Actuellement disponible pour de nouveaux projets</p>
+        </div>
+        <div style="width:320px;max-width:35%;">
+          <div style="background:linear-gradient(180deg,#f8fafc,#ffffff);padding:18px;border-radius:12px;border:1px solid #f0f3ff">
+            <strong>Focus</strong>
+            <p style="margin:8px 0 0;color:var(--muted)">Service design · Product design · Workflows métier</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects" aria-label="Selected works">
+        <!-- Project 1 -->
+        <article class="card">
+          <div class="cover">Project — cover visuel</div>
+          <div class="card-body">
+            <h3 style="margin:0;font-size:16px">Unifier un écosystème multi-usagers</h3>
+            <div class="meta">Product · UX · UI · Stratégie</div>
+            <p class="excerpt">Cadrage, discovery, prototypage et accompagnement jusqu'à la livraison.</p>
+            <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <div class="cover">Projet 2 — cover</div>
+          <div class="card-body">
+            <h3 style="margin:0;font-size:16px">Fluidifier l'accès aux aides sociales</h3>
+            <div class="meta">Service design · Recherche</div>
+            <p class="excerpt">Simplification des parcours et coordination multi-acteurs.</p>
+            <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
+          </div>
+        </article>
+
+        <!-- Duplicate as placeholders -->
+        <article class="card">
+          <div class="cover">Projet 3</div>
+          <div class="card-body">
+            <h3 style="margin:0;font-size:16px">Dashboard interne</h3>
+            <div class="meta">Product · UI</div>
+            <p class="excerpt">Design de composants, états, et workflows métier.</p>
+            <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="cover">Projet 4</div>
+          <div class="card-body">
+            <h3 style="margin:0;font-size:16px">Onboarding & services</h3>
+            <div class="meta">UX · Recherche</div>
+            <p class="excerpt">Ateliers terrain, tests utilisateurs, itérations rapides.</p>
+            <div class="cta-row"><a class="btn" href="#">Voir le cas</a></div>
+          </div>
+        </article>
+      </section>
+
+      <section style="margin-top:26px;background:#fbfbff;padding:14px;border-radius:10px">
+        <strong>À propos</strong>
+        <p style="margin:8px 0 0;color:var(--muted)">Designer produit & service — lien vers la page about.</p>
+        <p style="margin:8px 0 0"><a href="about.html" class="navlink">Voir ma page About</a></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© 2025 Metrey OM</div>
+      <div style="display:flex;align-items:center">
+        <img class="sig" src="https://via.placeholder.com/64x26?text=SIG" alt="sig">
+        <img class="sig" src="https://via.placeholder.com/64x26?text=SIG" alt="sig">
+      </div>
+      <div style="display:flex;gap:10px">
+        <a href="assets/cv.pdf" target="_blank">CV</a>
+        <a href="mailto:ton.email@example.com">Email</a>
+        <a href="https://www.linkedin.com/in/tonprofil" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="backdrop" id="backdrop"></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <button class="modal-close" id="closeModal">×</button>
+      <div class="modal-image" aria-hidden="true"></div>
+      <h3 id="mTitle">Tu penses que ça peut faire une étincelle ?</h3>
+      <p>Envoie-moi un mail ou réserve un meet — je suis disponible pour de nouveaux projets.</p>
+      <div style="display:flex;gap:10px;margin-top:12px">
+        <a class="btn primary" href="mailto:ton.email@example.com">Envoie-moi un mail</a>
+        <a class="btn" href="https://calendly.com/tonprofil" target="_blank">Réserve un meet</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // interactions: modal + hamburger
+    (function(){
+      const contactBtn = document.getElementById('contactBtn');
+      const modal = document.getElementById('modal');
+      const closeModal = document.getElementById('closeModal');
+      const backdrop = document.getElementById('backdrop');
+      const hamb = document.getElementById('hamb');
+      const nav = document.querySelector('nav');
+
+      function openModal(){ modal.classList.add('show'); modal.setAttribute('aria-hidden','false'); }
+      function hideModal(){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); }
+      if(contactBtn) contactBtn.addEventListener('click', openModal);
+      if(closeModal) closeModal.addEventListener('click', hideModal);
+      if(backdrop) backdrop.addEventListener('click', hideModal);
+
+      hamb && hamb.addEventListener('click', ()=> {
+        if(nav.style.display === 'flex'){ nav.style.display = 'none'; } else { nav.style.display = 'flex'; nav.style.flexDirection='column'; nav.style.position='absolute'; nav.style.right='16px'; nav.style.top='64px'; nav.style.background='#fff'; nav.style.padding='10px'; nav.style.boxShadow='0 8px 20px rgba(12,16,30,0.08)'; }
+      });
+    })();
+  </script>
+</body>
+</html>
