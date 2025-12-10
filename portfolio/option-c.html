@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Metrey OM — Portfolio V2 (Option C - Skeleton)</title>
+  <meta name="description" content="Portfolio Metrey OM - Option C : structure responsive, minimal.">
+  <style>
+    :root{
+      --max-w:1100px; --gap:16px; --muted:#6b7280; --text:#111; font-family: Inter, system-ui, Arial;
+    }
+    *{box-sizing:border-box} body{margin:0;color:var(--text);background:#fff;padding:18px}
+    .wrap{max-width:var(--max-w);margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #efefef}
+    .brand{font-weight:700}
+    nav{display:flex;gap:12px}
+    .btn{padding:6px 10px;border-radius:8px;border:1px solid #ddd;background:#fafafa}
+    .hero{padding:20px 0}
+    .hero h1{margin:0 0 8px;font-size:22px}
+    .grid{display:grid;grid-template-columns:1fr;gap:var(--gap);margin-top:18px}
+    .card{border:1px dashed #e6e6e6;background:#fff;padding:12px;border-radius:8px;min-height:120px;display:flex;flex-direction:column}
+    .placeholder{height:96px;background:#f5f7fb;border-radius:8px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+    .meta{font-size:13px;color:var(--muted)}
+    .footer{border-top:1px solid #efefef;padding:16px;margin-top:20px;display:flex;justify-content:space-between}
+    /* Breakpoints for structure */
+    @media (min-width:700px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (min-width:1000px){
+      .grid{grid-template-columns:repeat(3,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Metrey OM</div>
+      <nav>
+        <a class="btn" href="index.html#projects">Selected works</a>
+        <a class="btn" href="about.html">About</a>
+        <a class="btn" href="#" id="contactBtn">Get in touch</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Structure responsive — prototype</h1>
+        <p style="color:var(--muted)">Version C : base technique posée, grille & composants. Style minimal pour itérer vite.</p>
+      </section>
+
+      <section aria-label="selected works" class="grid">
+        <article class="card">
+          <div class="placeholder">Image / cover</div>
+          <div style="flex:1">
+            <h3 style="margin:0 0 6px">Titre projet</h3>
+            <div class="meta">Product · UX</div>
+            <p style="margin-top:8px;color:var(--muted)">Extrait / phrase courte</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="placeholder">Image / cover</div>
+          <div style="flex:1">
+            <h3 style="margin:0 0 6px">Titre projet</h3>
+            <div class="meta">Service design</div>
+            <p style="margin-top:8px;color:var(--muted)">Extrait / phrase courte</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="placeholder">Image / cover</div>
+          <div style="flex:1">
+            <h3 style="margin:0 0 6px">Titre projet</h3>
+            <div class="meta">Research</div>
+            <p style="margin-top:8px;color:var(--muted)">Extrait / phrase courte</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="placeholder">Image / cover</div>
+          <div style="flex:1">
+            <h3 style="margin:0 0 6px">Titre projet</h3>
+            <div class="meta">UI</div>
+            <p style="margin-top:8px;color:var(--muted)">Extrait / phrase courte</p>
+          </div>
+        </article>
+      </section>
+
+      <section style="margin-top:18px">
+        <h2 style="margin:0 0 8px">About — structure</h2>
+        <p style="color:var(--muted)">Bloc court — résumé / CTA vers About complet.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© 2025 Metrey OM</div>
+      <div style="display:flex;gap:10px">
+        <a href="assets/cv.pdf">CV</a>
+        <a href="mailto:ton.email@example.com">Email</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // minimal interactivity: contact alert placeholder
+    document.getElementById('contactBtn') && document.getElementById('contactBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      alert("Contact modal placeholder — remplacez par votre modal / mailto / calendly");
+    });
+  </script>
+</body>
+</html>
