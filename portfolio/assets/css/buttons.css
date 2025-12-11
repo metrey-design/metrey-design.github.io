@@ -1,0 +1,111 @@
+/* buttons.css — unified button system for portfolio */
+
+/* Base shared layout */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;                 /* spec */
+  height:40px;             /* fixed height as requested */
+  padding: 12px 16px;      /* layout spec for primary/secondary */
+  border-radius:99px;      /* pill */
+  font-family: var(--font-ui);
+  font-size:16px;
+  font-weight:600;
+  line-height:1.5;
+  text-decoration:none;
+  cursor:pointer;
+  border: none;
+  transition: all .14s ease;
+  -webkit-font-smoothing:antialiased;
+  vertical-align:middle;
+  box-sizing:border-box;
+}
+
+/* Icon size helper (inline SVGs) */
+.btn .icon, .icon {
+  width:16px;
+  height:16px;
+  display:inline-block;
+  flex:0 0 16px;
+}
+
+/* ------------------ Primary variants ------------------ */
+/* Primary Black (filled) */
+.btn--primary.black {
+  background: var(--color-greyscale-900);
+  color: var(--color-greyscale-50);
+  border: none;
+}
+.btn--primary.black:hover {
+  /* "Eclaircir" — lighten slightly */
+  filter: brightness(1.06);
+}
+
+/* Primary White (filled white, text black) */
+.btn--primary.white {
+  background: var(--color-greyscale-50);
+  color: var(--color-greyscale-900);
+  border: none;
+}
+.btn--primary.white:hover {
+  /* "Assombrir" — slightly darker */
+  filter: brightness(.96);
+}
+
+/* ------------------ Secondary (outline) variants ------------------ */
+/* Secondary Black (outline dark) */
+.btn--secondary.black {
+  background: transparent;
+  color: var(--color-greyscale-900);
+  border: 2px solid var(--color-greyscale-900);
+  padding: 10px 14px; /* slightly reduced inner padding for outline visual */
+}
+.btn--secondary.black:hover {
+  filter: brightness(1.06); /* lighten */
+}
+
+/* Secondary White (outline white/very light) */
+.btn--secondary.white {
+  background: transparent;
+  color: var(--color-greyscale-50);
+  border: 2px solid var(--color-greyscale-50);
+  padding: 10px 14px;
+}
+.btn--secondary.white:hover {
+  filter: brightness(.96); /* assombrir */
+}
+
+/* ------------------ Tertiary (text-only) ------------------ */
+/* Tertiary Black (text) */
+.btn--tertiary.black {
+  background: transparent;
+  color: var(--color-greyscale-900);
+  border: none;
+  padding: 10px 0; /* per spec */
+  height:40px;
+  gap:4px;
+}
+
+/* Tertiary White (text) */
+.btn--tertiary.white {
+  background: transparent;
+  color: var(--color-greyscale-50);
+  border: none;
+  padding: 10px 0;
+  height:40px;
+}
+
+/* ------------------ Icon helpers ------------------ */
+/* If you want icon left/right classes (spacing control) */
+.btn--icon-left .icon { margin-right:6px }
+.btn--icon-right .icon { margin-left:6px }
+
+/* Accessibility focus ring */
+.btn:focus{
+  outline: 3px solid rgba(53,123,242,0.12);
+  outline-offset: 3px;
+}
+
+/* Small / compact variant (if needed) */
+.btn--sm{height:36px;padding:8px 12px;font-size:14px}
