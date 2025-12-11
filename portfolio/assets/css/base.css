@@ -29,4 +29,65 @@ body{
 /* responsive typography adjustments */
 @media (max-width:900px){
   :root{--fs-h1:34px;--fs-h1-line:40px;--fs-h2:24px;--fs-body:15px}
+
+/* ---------------------------------------
+   GLOBAL LAYOUT : container, header, footer
+---------------------------------------- */
+
+/* Container global centré */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: var(--space-4);
+}
+
+
+/* HEADER */
+.site-header {
+  width: 100%;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-greyscale-200);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation desktop */
+.site-nav {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.navlink {
+  color: var(--color-greyscale-900);
+  font-family: Manrope;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-ctas {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+
+/* FOOTER */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--color-greyscale-200);
+}
+
+.footer .row {
+  display: flex;
+  gap: var(--space-5);
+}
+  
 }
