@@ -2,12 +2,130 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio – Version 2 (Test)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metrey OM — Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
-  <h1>Hello Metrey 👋</h1>
-  <p>Ta version V2 du portfolio est en ligne !</p>
-  <p>Si tu vois cette page sur <strong>/portfolio</strong>, tout fonctionne 🚀</p>
+
+  <div class="container">
+
+    <!-- header -->
+    <header class="header">
+      <div class="brand">Metrey OM</div>
+
+      <nav class="nav">
+        <a class="navlink" href="#projects">Selected works</a>
+        <a class="navlink" href="#">About</a>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="btn primary" data-open-modal id="contactNav">Get in touch</button>
+        <button id="hamb" class="hamburger">☰</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-wrap">
+      <div class="hero">
+        <div class="hero-left">
+          <p class="tagline">Product & Service Designer</p>
+          <h1 class="h1">Designer qui réconcilie humains et systèmes</h1>
+          <p class="lead">J’aime créer des choses belles et utiles, qui rendent la vie un peu plus simple pour celles et ceux qui les utilisent. Mais surtout, je suis obsédée par l’idée de transformer des logiques structurelles complexes en solutions claires, concrètes et humaines.</p>
+
+          <div style="display:flex;gap:var(--space-3);margin-top:var(--space-5)">
+            <a class="btn primary" href="#projects">Voir mon travail</a>
+            <button class="btn secondary" data-open-modal>Contacte-moi</button>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="side-card">
+            <div class="avatar" aria-hidden="true">
+              <!-- upload avatar to assets/img/avatar.png and replace with <img src="assets/img/avatar.png" alt="Metrey"> -->
+            </div>
+            <div>
+              <div style="font-weight:var(--fw-semibold)">Actuellement disponible</div>
+              <div class="caption" style="margin-top:6px">Ouvert aux missions produit & service</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+      <article class="card">
+        <div class="cover">Image placeholder — Projet 1</div>
+        <div class="card-body">
+          <h3>Unifier un écosystème multi-usagers</h3>
+          <div class="meta">Product · UX · UI · Stratégie</div>
+          <p class="excerpt">Cadrage, discovery, prototypage et déploiement.</p>
+          <a class="btn secondary" href="#">Voir le cas</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover">Image placeholder — Projet 2</div>
+        <div class="card-body">
+          <h3>Fluidifier l’accès aux aides sociales</h3>
+          <div class="meta">Service design · Recherche</div>
+          <p class="excerpt">Réduction des frictions et coordination multi-acteurs.</p>
+          <a class="btn secondary" href="#">Voir le cas</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover">Image placeholder — Projet 3</div>
+        <div class="card-body">
+          <h3>Dashboard interne — optimisation des workflows</h3>
+          <div class="meta">Product · UI</div>
+          <p class="excerpt">Composants UI, états et flows pour usages internes.</p>
+          <a class="btn secondary" href="#">Voir le cas</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>© 2025 Metrey OM</div>
+      <div style="display:flex;gap:12px">
+        <a class="navlink" href="#">CV</a>
+        <a class="navlink" href="mailto:hello@example.com">Email</a>
+        <a class="navlink" href="#">LinkedIn</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal" aria-hidden="true">
+    <div class="backdrop"></div>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <div class="modal-left"><div class="placeholder"></div></div>
+      <div class="modal-right">
+        <button class="modal-close" id="closeModal">×</button>
+        <div class="tagline">Let’s chat</div>
+        <h2 class="modal-title">Et si on collaborait&nbsp;?</h2>
+        <p class="lead">Des questions, une recommandation ou un projet à co-construire ? Discutons-en dès maintenant.</p>
+        <div class="modal-ctas">
+          <a class="btn primary" href="mailto:hello@example.com">Envoie-moi un mail</a>
+          <a class="btn secondary" href="#" target="_blank">Réserve un meet</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/modal.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
