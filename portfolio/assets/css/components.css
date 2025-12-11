@@ -1,0 +1,38 @@
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:center;padding:var(--space-4) 0;border-bottom:1px solid var(--color-border);background:#fff;position:sticky;top:0;z-index:30}
+.brand{font-weight:700}
+
+/* Nav mobile */
+.hamburger{display:none;background:none;border:0;font-size:22px;cursor:pointer}
+nav.nav{display:flex;gap:var(--space-4);align-items:center}
+@media(max-width:900px){nav.nav{display:none} .hamburger{display:block}}
+
+/* HERO */
+.hero-wrap{min-height:100vh;display:flex;align-items:center}
+.hero{display:flex;gap:var(--space-7)}
+.hero-left{flex:1}
+.hero-side{width:300px;display:flex;justify-content:flex-end}
+.side-card{background:#fff;border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);border:1px solid var(--color-border);display:flex;align-items:center;gap:var(--space-3);min-width:220px}
+.avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;flex:0 0 48px;background:var(--color-greyscale-200)}
+
+/* Projects */
+.projects{margin-top:var(--space-8);display:flex;flex-direction:column;gap:var(--space-6)}
+.card{background:#fff;border-radius:var(--radius-lg);border:1px solid var(--color-border);overflow:hidden}
+.cover{height:240px;background:linear-gradient(135deg,var(--color-blue-50),var(--color-blue-100));display:flex;align-items:center;justify-content:center;color:var(--color-body);font-weight:var(--fw-bold)}
+.card-body{padding:var(--space-6)}
+.meta{font-size:var(--fs-caption);color:var(--color-muted);margin-bottom:var(--space-3)}
+
+/* Modal */
+.modal{display:none;position:fixed;inset:0;align-items:center;justify-content:center;z-index:200}
+.modal.show{display:flex}
+.backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(3px)}
+.modal-card{width:92%;max-width:900px;border-radius:var(--radius-xl);overflow:hidden;display:flex;background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.12)}
+.modal-left{width:40%}
+.modal-left .placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--color-purple-50),var(--color-purple-200))}
+.modal-right{width:60%;padding:var(--space-7);position:relative}
+.modal-close{position:absolute;top:18px;right:18px;border:0;background:none;font-size:26px;cursor:pointer}
+.modal-ctas{display:flex;gap:var(--space-3)}
+
+/* utility */
+.container--narrow{max-width:1100px;margin:0 auto}
+@media(max-width:900px){.hero{flex-direction:column}.hero-side{width:100%}.modal-card{flex-direction:column}.modal-left{height:180px;width:100%}.modal-right{width:100%}}
