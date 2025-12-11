@@ -1,3 +1,5 @@
+/* base.css — stripped of button styles (buttons moved to buttons.css) */
+
 /* reset minimal */
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -20,13 +22,9 @@ body{
 .lead{font-size:var(--fs-body);color:var(--color-body);margin:0 0 var(--space-4);max-width:60ch}
 .caption{font-size:var(--fs-caption);color:var(--color-muted)}
 
-/* Buttons (base) */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--radius-xxl);font-weight:var(--fw-semibold);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:all .14s ease}
-.btn.primary{background:var(--color-greyscale-900);color:#fff;border-color:var(--color-greyscale-900)}
-.btn.primary:hover{filter:brightness(.92)}
-.btn.secondary{background:#fff;color:var(--color-greyscale-900);border-color:var(--color-border)}
-.btn.secondary:hover{border-color:var(--color-greyscale-700)}
-.btn.text{background:transparent;border:0;padding:0;color:var(--color-greyscale-900)}
+/* Small utilities */
+.row{display:flex;gap:var(--space-4);align-items:center}
+.col{display:flex;flex-direction:column;gap:var(--space-4)}
 
 /* responsive typography adjustments */
 @media (max-width:900px){
