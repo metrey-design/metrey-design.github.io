@@ -2,338 +2,454 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Metrey OM — Portfolio V2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metrey OM — Portfolio</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+  /* ----------------------------------------------------
+     ROOT — DESIGN SYSTEM VARIABLES
+  ----------------------------------------------------- */
+  :root{
+    /* ---------- COLORS ---------- */
+    /* Blue */
+    --color-blue-50: #edf0fe;
+    --color-blue-100: #dee5fd;
+    --color-blue-200: #b9c8fa;
+    --color-blue-300: #96aef8;
+    --color-blue-400: #6f95f5;
+    --color-blue-500: #357bf2;
+    --color-blue-600: #2562c5;
+    --color-blue-700: #1a4895;
+    --color-blue-800: #0f3068;
+    --color-blue-900: #061c41;
+    --color-blue-950: #03102a;
+
+    /* Purple */
+    --color-purple-50: #f8e9fd;
+    --color-purple-100: #f2d2fb;
+    --color-purple-200: #e6a3f7;
+    --color-purple-300: #dc6ef3;
+    --color-purple-400: #cb36e5;
+    --color-purple-500: #9c27b0;
+    --color-purple-600: #801e90;
+    --color-purple-700: #60146d;
+    --color-purple-800: #450c4f;
+    --color-purple-900: #2c0533;
+    --color-purple-950: #1d0323;
+
+    /* Green */
+    --color-green-50: #ddffe3;
+    --color-green-100: #b5ffc3;
+    --color-green-200: #0cfe70;
+    --color-green-300: #0aeb67;
+    --color-green-400: #09d85e;
+    --color-green-500: #07c555;
+    --color-green-600: #049b41;
+    --color-green-700: #02732f;
+    --color-green-800: #014d1d;
+    --color-green-900: #002b0d;
+    --color-green-950: #001b06;
+
+    /* Orange */
+    --color-orange-50: #fef1ef;
+    --color-orange-100: #fde2e0;
+    --color-orange-200: #fbc1bb;
+    --color-orange-300: #f9a297;
+    --color-orange-400: #f8816d;
+    --color-orange-500: #f5592c;
+    --color-orange-600: #c34521;
+    --color-orange-700: #933216;
+    --color-orange-800: #65200c;
+    --color-orange-900: #3e1004;
+    --color-orange-950: #2a0802;
+
+    /* Red */
+    --color-red-50: #fdedef;
+    --color-red-100: #fcdae0;
+    --color-red-200: #f9b4c0;
+    --color-red-300: #f78ba1;
+    --color-red-400: #f65880;
+    --color-red-500: #e02763;
+    --color-red-600: #b51d4e;
+    --color-red-700: #8a143a;
+    --color-red-800: #620b27;
+    --color-red-900: #3d0415;
+    --color-red-950: #2a020c;
+
+    /* Greyscale */
+    --color-greyscale-50: #f3f3f5;
+    --color-greyscale-100: #e4e5e8;
+    --color-greyscale-200: #cccfd5;
+    --color-greyscale-300: #b2b6c0;
+    --color-greyscale-400: #989eab;
+    --color-greyscale-500: #818795;
+    --color-greyscale-600: #666b76;
+    --color-greyscale-700: #4c5059;
+    --color-greyscale-800: #34373d;
+    --color-greyscale-900: #1c1e22;
+    --color-greyscale-950: #121316;
+
+    /* Aliases */
+    --color-text: var(--color-greyscale-900);
+    --color-body: var(--color-greyscale-600);
+    --color-muted: var(--color-greyscale-400);
+    --color-border: var(--color-greyscale-200);
+    --color-bg: var(--color-greyscale-50);
+
+    /* ---------- TYPOGRAPHY ---------- */
+    --font-heading-serif: 'Lora', serif;
+    --font-ui: 'Manrope', sans-serif;
+
+    --fs-h1: 64px;
+    --fs-h1-line: 76.8px;
+    --fs-h2: 32px;
+    --fs-h2-line: 48px;
+    --fs-h3: 16px;
+    --fs-h3-line: 24px;
+    --fs-tagline: 16px;
+    --fs-body: 16px;
+    --fs-caption: 14px;
+
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-heavy: 800;
+
+    /* ---------- SPACING ---------- */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+
+    /* ---------- RADII ---------- */
+    --radius-xs: 8px;
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 32px;
+    --radius-xl: 64px;
+    --radius-xxl: 99px;
+
+    /* Layout */
+    --content-max-w: 1100px;
+  }
+
+  /* ----------------------------------------------------
+     BASE STYLES
+  ----------------------------------------------------- */
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:var(--font-ui);
+    background:var(--color-bg);
+    color:var(--color-text);
+    font-size:var(--fs-body);
+    line-height:1.5;
+  }
+  .wrap{max-width:var(--content-max-w);margin:0 auto;padding:var(--space-6)}
+
+  /* ----------------------------------------------------
+     TYPOGRAPHY CLASSES
+  ----------------------------------------------------- */
+  .h1{
+    font-family:var(--font-heading-serif);
+    font-size:var(--fs-h1);
+    line-height:var(--fs-h1-line);
+    margin:0 0 var(--space-5);
+    font-weight:var(--fw-regular);
+  }
+  .tagline{
+    font-family:var(--font-ui);
+    font-size:var(--fs-tagline);
+    font-weight:var(--fw-medium);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--color-muted);
+    margin-bottom:var(--space-3);
+  }
+  .lead{
+    font-size:var(--fs-body);
+    color:var(--color-body);
+    max-width:60ch;
+    margin-bottom:var(--space-4);
+  }
+
+  /* ----------------------------------------------------
+     BUTTONS
+  ----------------------------------------------------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 20px;
+    border-radius:var(--radius-xxl);
+    font-size:var(--fs-body);
+    font-weight:var(--fw-semibold);
+    text-decoration:none;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:all .15s ease;
+  }
+  .btn.primary{
+    background:var(--color-greyscale-900);
+    color:#fff;
+    border-color:var(--color-greyscale-900);
+  }
+  .btn.primary:hover{
+    filter:brightness(.92);
+  }
+  .btn.secondary{
+    background:#fff;
+    color:var(--color-greyscale-900);
+    border-color:var(--color-border);
+  }
+  .btn.secondary:hover{
+    border-color:var(--color-greyscale-700);
+  }
+
+  /* ----------------------------------------------------
+     HEADER
+  ----------------------------------------------------- */
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:var(--space-4) 0;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:20;
+    border-bottom:1px solid var(--color-border);
+    backdrop-filter:blur(6px);
+  }
+  nav{
+    display:flex;
+    gap:var(--space-4);
+  }
+  .navlink{
+    color:var(--color-text);
+    text-decoration:none;
+    font-weight:var(--fw-medium);
+  }
+  .hamburger{
+    display:none;
+    background:none;
+    border:0;
+    font-size:24px;
+    cursor:pointer;
+  }
+
+  /* ----------------------------------------------------
+     HERO
+  ----------------------------------------------------- */
+  .hero-wrap{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+  }
+  .hero{
+    display:flex;
+    gap:var(--space-7);
+  }
+  .hero-left{
+    flex:1;
+  }
+  .hero-side{
+    width:320px;
+  }
+  .side-card{
+    background:white;
+    border-radius:var(--radius-lg);
+    padding:var(--space-5);
+    border:1px solid var(--color-border);
+  }
+
+  /* ----------------------------------------------------
+     PROJECTS
+  ----------------------------------------------------- */
+  .projects{
+    margin-top:var(--space-8);
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-6);
+  }
+  .card{
+    background:white;
+    border-radius:var(--radius-lg);
+    border:1px solid var(--color-border);
+    overflow:hidden;
+  }
+  .cover{
+    height:240px;
+    background:linear-gradient(135deg,var(--color-blue-50),var(--color-blue-100));
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:var(--fw-bold);
+    color:var(--color-body);
+  }
+  .card-body{
+    padding:var(--space-6);
+  }
+  .card-body h3{
+    margin:0 0 var(--space-2);
+    font-size:22px;
+    font-weight:var(--fw-bold);
+  }
+  .meta{
+    font-size:var(--fs-caption);
+    color:var(--color-muted);
+    margin-bottom:var(--space-3);
+  }
+  .excerpt{
+    color:var(--color-body);
+    margin-bottom:var(--space-4);
+  }
+
+  /* ----------------------------------------------------
+     FOOTER
+  ----------------------------------------------------- */
+  .footer{
+    margin-top:var(--space-8);
+    padding:var(--space-6) 0;
+    border-top:1px solid var(--color-border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:var(--color-body);
+  }
+
+  /* ----------------------------------------------------
+     MODAL
+  ----------------------------------------------------- */
+  .modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:200;
+    align-items:center;
+    justify-content:center;
+  }
+  .modal.show{display:flex}
+  .backdrop{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    backdrop-filter:blur(3px);
+  }
+  .modal-card{
+    position:relative;
+    background:white;
+    width:92%;
+    max-width:900px;
+    border-radius:var(--radius-xl);
+    display:flex;
+    overflow:hidden;
+    z-index:210;
+  }
+  .modal-left{
+    width:40%;
+    background:var(--color-purple-100);
+  }
+  .modal-left .placeholder{
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,var(--color-purple-50),var(--color-purple-200));
+  }
+  .modal-right{
+    width:60%;
+    padding:var(--space-7);
+    position:relative;
+  }
+  .modal-close{
+    position:absolute;
+    top:20px;
+    right:20px;
+    font-size:28px;
+    background:none;
+    border:0;
+    cursor:pointer;
+  }
+  .modal-title{
+    font-family:var(--font-heading-serif);
+    font-size:42px;
+    margin:0 0 var(--space-4);
+    line-height:1.1;
+  }
+  .modal-ctas{
+    display:flex;
+    gap:var(--space-3);
+    margin-top:var(--space-4);
+  }
+
+  /* ----------------------------------------------------
+     RESPONSIVE
+  ----------------------------------------------------- */
+  @media(max-width:900px){
     :root{
-      --max-w:1100px;
-      --accent:#111;
-      --muted:#6b7280;
-      --text:#111;
-      --bg:#fff;
-      --radius:14px;
-      --container-pad:28px;
-    }
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:"Inter", system-ui, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-    }
-
-    .wrap{max-width:var(--max-w);margin:0 auto;padding:var(--container-pad)}
-
-    /* BUTTON SYSTEM — unified */
-    .btn{
-      padding:12px 22px;
-      border-radius:999px;
-      font-weight:600;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-size:15px;
-      cursor:pointer;
-      border:1px solid transparent;
-      transition:0.2s ease;
-    }
-
-    .btn.primary{
-      background:#111;
-      color:#fff;
-      border-color:#111;
-    }
-    .btn.primary:hover{
-      background:#000;
-    }
-
-    .btn.secondary{
-      background:#fff;
-      color:#111;
-      border-color:#ddd;
-    }
-    .btn.secondary:hover{
-      border-color:#bbb;
-    }
-
-    /* HEADER */
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:16px 0;
-      position:sticky;
-      top:0;
-      background:rgba(255,255,255,0.9);
-      backdrop-filter:blur(6px);
-      border-bottom:1px solid #f3f4f6;
-      z-index:40;
-    }
-
-    .brand{font-size:18px;font-weight:700}
-
-    /* Logo */
-    header img {
-      width: 100px;
-      opacity: 0.92;
-      margin-bottom: 40px;
-      transform: translateY(8px);
-      animation: fadeUp 0.9s ease-out forwards;
-    }
-
-    nav{
-      display:flex;
-      gap:16px;
-      align-items:center;
-    }
-    .navlink{
-      text-decoration:none;
-      color:var(--text);
-      font-weight:500;
-      padding:6px 10px;
-      border-radius:8px;
-      font-size:15px;
-    }
-
-    .hamburger{
-      display:none;
-      background:none;
-      border:0;
-      font-size:22px;
-      cursor:pointer;
-    }
-
-    /* HERO */
-    .hero-wrap{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
+      --fs-h1: 34px;
+      --fs-h1-line: 40px;
+      --fs-h2: 24px;
+      --fs-h2-line: 34px;
+      --fs-body: 15px;
     }
     .hero{
-      display:flex;
-      gap:32px;
+      flex-direction:column;
     }
-    .hero-left{flex:1;max-width:760px}
-    .hero-left h1{
-      font-size:42px;
-      font-weight:800;
-      margin:0 0 14px;
-      line-height:1.05;
-      letter-spacing:-0.02em;
-    }
-    .lead{
-      color:var(--muted);
-      font-size:17px;
-      margin:0 0 16px;
-      max-width:60ch;
-    }
-    .hero-ctas{
-      display:flex;
-      gap:12px;
-      margin-top:14px;
-    }
-    .availability{
-      font-size:14px;
-      color:var(--muted);
-      margin-top:12px;
-    }
-
     .hero-side{
-      width:320px;
-      max-width:32%;
-      min-width:220px;
-    }
-    .side-card{
-      border:1px solid #eceef7;
-      border-radius:16px;
-      padding:20px;
-      background:linear-gradient(180deg,#fafbff,#ffffff);
-    }
-
-    /* PROJECTS */
-    .projects{
-      display:flex;
-      flex-direction:column;
-      gap:24px;
-      margin-top:40px;
-    }
-    .card{
-      background:white;
-      border-radius:16px;
-      border:1px solid #eceef7;
-      box-shadow:0 8px 30px rgba(0,0,0,0.06);
-      overflow:hidden;
-    }
-    .cover{
-      height:240px;
-      background:linear-gradient(135deg,#e8eefc,#f7f9ff);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#7481a8;
-      font-weight:600;
-    }
-    .card-body{
-      padding:20px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .card-body h3{
-      margin:0;
-      font-size:20px;
-      font-weight:700;
-    }
-    .meta{
-      font-size:12px;
-      color:var(--muted);
-      text-transform:uppercase;
-      letter-spacing:0.08em;
-    }
-    .excerpt{font-size:15px}
-
-    /* FOOTER */
-    .footer{
-      margin-top:50px;
-      padding:24px 0;
-      border-top:1px solid #eee;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    /* MODAL V2 */
-    .modal{
-      display:none;
-      position:fixed;
-      inset:0;
-      align-items:center;
-      justify-content:center;
-      z-index:200;
-    }
-    .modal.show{
-      display:flex;
-    }
-
-    .backdrop{
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.45);
-      backdrop-filter:blur(3px);
-    }
-
-    .modal-card{
-      background:white;
-      width:92%;
-      max-width:900px;
-      min-height:380px;
-      border-radius:32px;
-      overflow:hidden;
-      position:relative;
-      display:flex;
-      z-index:201;
-      box-shadow:0 30px 60px rgba(0,0,0,0.13);
-    }
-
-    .modal-left{
-      width:40%;
-      background:#f3b1c7;
-    }
-    .modal-left .placeholder{
       width:100%;
-      height:100%;
-      background:linear-gradient(135deg,#f9c5d8,#ff89a8);
     }
-
-    .modal-right{
-      width:60%;
-      padding:50px;
-      display:flex;
+    nav{
+      display:none;
       flex-direction:column;
-      justify-content:center;
-      position:relative;
-    }
-
-    .modal-tag{
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:0.08em;
-      color:var(--muted);
-      margin-bottom:12px;
-      font-weight:600;
-    }
-
-    .modal-title{
-      font-family:"Playfair Display", serif;
-      font-size:42px;
-      margin:0 0 16px;
-      line-height:1.05;
-    }
-
-    .modal-text{
-      font-size:17px;
-      color:#444;
-      margin:0 0 26px;
-      max-width:50ch;
-    }
-
-    .modal-ctas{
-      display:flex;
-      gap:14px;
-    }
-
-    .modal-close{
+      background:white;
+      padding:var(--space-4);
       position:absolute;
-      top:20px;
-      right:20px;
-      background:none;
-      border:0;
-      font-size:28px;
-      cursor:pointer;
+      right:16px;
+      top:72px;
+      border-radius:var(--radius-md);
+      border:1px solid var(--color-border);
     }
-
-    /* Responsive modal */
-    @media(max-width:800px){
-      .modal-card{flex-direction:column}
-      .modal-left{width:100%;height:180px}
-      .modal-right{width:100%;padding:32px 24px}
-      .modal-title{font-size:32px}
+    .hamburger{
+      display:block;
     }
-
-    /* Mobile */
-    @media(max-width:640px){
-      nav{display:none}
-      .hamburger{display:block}
-      .hero{flex-direction:column}
-      .hero-left h1{font-size:32px}
+    .modal-card{
+      flex-direction:column;
     }
+    .modal-left{
+      width:100%;
+      height:180px;
+    }
+    .modal-right{
+      width:100%;
+      padding:var(--space-6);
+    }
+  }
   </style>
 </head>
 
-<body>
 
+<body>
 <div class="wrap">
 
   <!-- HEADER -->
   <header>
-    <div class="brand">
-      <img src="logo_mo_medium_black.svg" alt="Metrey Logo">
-    </div>
+    <div class="brand">Metrey OM</div>
 
     <nav>
       <a class="navlink" href="#projects">Selected works</a>
       <a class="navlink" href="#">About</a>
     </nav>
 
-    <div style="display:flex;gap:12px;align-items:center">
-      <button class="btn primary" id="contactBtn">Get in touch</button>
+    <div style="display:flex; gap:var(--space-3);">
+      <button class="btn secondary" id="contactBtn">Get in touch</button>
       <button class="hamburger" id="hamb">☰</button>
     </div>
   </header>
@@ -342,23 +458,25 @@
   <section class="hero-wrap">
     <div class="hero">
       <div class="hero-left">
-        <h1>Designer qui réconcilie<br>humains et systèmes</h1>
+        <p class="tagline">Product & Service Designer</p>
+        <h1 class="h1">Designer qui réconcilie humains et systèmes</h1>
+
         <p class="lead">
           J’aide les organisations à clarifier des parcours complexes, structurer les workflows métier et produire des interfaces utiles et durables.
         </p>
 
-        <div class="hero-ctas">
+        <div style="display:flex; gap:var(--space-3); margin-top:var(--space-4);">
           <a class="btn primary" href="#projects">Voir mon travail</a>
           <a class="btn secondary" href="#">Mon CV</a>
         </div>
-
-        <p class="availability">Actuellement disponible pour de nouveaux projets</p>
       </div>
 
       <aside class="hero-side">
         <div class="side-card">
-          <strong>Focus</strong>
-          <p style="margin:0;color:var(--muted)">Service design · Product design · Workflows métier</p>
+          <strong style="font-weight:var(--fw-bold);">Focus</strong>
+          <p style="margin-top:var(--space-2); color:var(--color-body);">
+            Service design · Product design · Workflows métier
+          </p>
         </div>
       </aside>
     </div>
@@ -366,15 +484,14 @@
 
   <!-- PROJECTS -->
   <section id="projects" class="projects">
+
     <article class="card">
       <div class="cover">Image placeholder — Projet 1</div>
       <div class="card-body">
         <h3>Unifier un écosystème multi-usagers</h3>
         <div class="meta">Product · UX · UI · Stratégie</div>
         <p class="excerpt">Cadrage, discovery, prototypage et déploiement.</p>
-        <div class="cta-row">
-          <a class="btn secondary" href="#">Voir le cas</a>
-        </div>
+        <a class="btn secondary" href="#">Voir le cas</a>
       </div>
     </article>
 
@@ -384,9 +501,7 @@
         <h3>Fluidifier l’accès aux aides sociales</h3>
         <div class="meta">Service design · Recherche</div>
         <p class="excerpt">Réduction des frictions et coordination multi-acteurs.</p>
-        <div class="cta-row">
-          <a class="btn secondary" href="#">Voir le cas</a>
-        </div>
+        <a class="btn secondary" href="#">Voir le cas</a>
       </div>
     </article>
 
@@ -395,28 +510,29 @@
       <div class="card-body">
         <h3>Dashboard interne — optimisation des workflows</h3>
         <div class="meta">Product · UI</div>
-        <p class="excerpt">Composants UI, états et flows pour usages internes.</p>
-        <div class="cta-row">
-          <a class="btn secondary" href="#">Voir le cas</a>
-        </div>
+        <p class="excerpt">Composants UI, états, flows pour usages internes.</p>
+        <a class="btn secondary" href="#">Voir le cas</a>
       </div>
     </article>
+
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div>© 2025 Metrey OM</div>
-    <div style="display:flex;gap:10px">
-      <a href="#">CV</a>
-      <a href="mailto:hello@example.com">Email</a>
-      <a href="#">LinkedIn</a>
+    <div style="display:flex; gap:var(--space-3);">
+      <a href="#" class="navlink">CV</a>
+      <a href="mailto:hello@example.com" class="navlink">Email</a>
+      <a href="#" class="navlink">LinkedIn</a>
     </div>
   </footer>
+
 </div>
 
-<!-- MODAL V2 -->
-<div id="modal" class="modal" aria-hidden="true">
-  <div class="backdrop" id="backdrop"></div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="backdrop"></div>
 
   <div class="modal-card">
 
@@ -425,39 +541,54 @@
     </div>
 
     <div class="modal-right">
-
       <button class="modal-close" id="closeModal">×</button>
 
-      <div class="modal-tag">LET’S CHAT</div>
+      <div class="tagline">Let’s chat</div>
+      <h2 class="modal-title">Et si on collaborait&nbsp;?</h2>
 
-      <h2 class="modal-title">Et si on collaborait ?</h2>
-
-      <p class="modal-text">
-        Des questions ou des recommandations à partager ? Peut-être une collaboration 
-        ou un projet à construire ensemble ? Discutons-en dès maintenant !
+      <p class="lead" style="margin-bottom:var(--space-5);">
+        Des questions, une recommandation ou un projet à co-construire ?  
+        Discutons-en dès maintenant.
       </p>
 
       <div class="modal-ctas">
         <a class="btn primary" href="mailto:hello@example.com">Envoie-moi un mail</a>
         <a class="btn secondary" href="#" target="_blank">Réserve un meet</a>
       </div>
-
     </div>
 
   </div>
 </div>
 
+
 <script>
 (function(){
-  const contactBtn = document.getElementById('contactBtn');
   const modal = document.getElementById('modal');
+  const contactBtn = document.getElementById('contactBtn');
   const closeBtn = document.getElementById('closeModal');
-  const backdrop = document.getElementById('backdrop');
+  const backdrop = document.querySelector('.backdrop');
   const hamb = document.getElementById('hamb');
   const nav = document.querySelector('nav');
 
+  /* Modal */
   function openModal(){ modal.classList.add('show'); }
   function closeModalFn(){ modal.classList.remove('show'); }
 
   contactBtn.addEventListener('click', openModal);
-  closeBtn.addEventListener(
+  closeBtn.addEventListener('click', closeModalFn);
+  backdrop.addEventListener('click', closeModalFn);
+
+  /* Mobile nav */
+  hamb.addEventListener('click', ()=>{
+    if(nav.style.display === 'flex'){
+      nav.style.display='none';
+    } else {
+      nav.style.display='flex';
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>
