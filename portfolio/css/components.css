@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  width: 280px; /* taille fixe */
+  width: 370px; /* taille fixe */
   max-width: 100%; /* responsive */
   margin-left: auto; /* pousse la card à droite */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* optionnel pour effet chat */
