@@ -116,7 +116,7 @@ body {
 
 /* Logo */
 .logo {
-  height: 40px;    /* per your chosen size */
+  height: 20px;    /* per your chosen size */
   width: auto;
   display: block;
 }
@@ -165,7 +165,7 @@ body {
 }
 
 .f-icon {
-  width: 20px;   /* requested size */
-  height: 20px;
+  width: 10px;   /* requested size */
+  height: 10px;
   display: block;
 }
