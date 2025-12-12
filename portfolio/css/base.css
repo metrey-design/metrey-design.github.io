@@ -114,11 +114,17 @@ body {
   justify-content: space-between;
 }
 
-/* Logo */
+/* Container du logo (le lien) */
 .logo {
-  height: 20px;    /* per your chosen size */
-  width: auto;
-  display: block;
+  display: block;       /* assure que le lien se comporte comme un bloc */
+  height: 20px;         /* hauteur du logo souhaitée */
+}
+
+/* Image du logo */
+.logo-img {
+  height: 100%;         /* prend toute la hauteur du parent */
+  width: auto;          /* largeur proportionnelle */
+  display: block;       /* supprime les petits espaces en ligne */
 }
 
 /* Desktop nav ONLY (mobile hidden via components.css) */
