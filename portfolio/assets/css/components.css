@@ -1,45 +1,263 @@
-/* Header */
-.header{display:flex;justify-content:space-between;align-items:center;padding:var(--space-4) 0;border-bottom:1px solid var(--color-border);background:#fff;position:sticky;top:0;z-index:30}
-.brand{font-weight:700}
+/* ----------------------------------------------------
+   components.css — Hero, cards, modal, mobile nav
+----------------------------------------------------- */
 
-/* Nav mobile */
-.hamburger{display:none;background:none;border:0;font-size:22px;cursor:pointer}
-nav.nav{display:flex;gap:var(--space-4);align-items:center}
-@media(max-width:900px){nav.nav{display:none} .hamburger{display:block}}
 
-/* HERO */
-.hero-wrap{min-height:100vh;display:flex;align-items:center}
-.hero{display:flex;gap:var(--space-7)}
-.hero-left{flex:1}
-.hero-side{width:300px;display:flex;justify-content:flex-end}
-.side-card{background:#fff;border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);border:1px solid var(--color-border);display:flex;align-items:center;gap:var(--space-3);min-width:220px}
-.avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;flex:0 0 48px;background:var(--color-greyscale-200)}
+/* ----------------------------------------------------
+   HERO SECTION
+----------------------------------------------------- */
 
-/* Projects */
-.projects{margin-top:var(--space-8);display:flex;flex-direction:column;gap:var(--space-6)}
-.card{background:#fff;border-radius:var(--radius-lg);border:1px solid var(--color-border);overflow:hidden}
-.cover{height:240px;background:linear-gradient(135deg,var(--color-blue-50),var(--color-blue-100));display:flex;align-items:center;justify-content:center;color:var(--color-body);font-weight:var(--fw-bold)}
-.card-body{padding:var(--space-6)}
-.meta{font-size:var(--fs-caption);color:var(--color-muted);margin-bottom:var(--space-3)}
-
-/* Modal */
-.modal{display:none;position:fixed;inset:0;align-items:center;justify-content:center;z-index:200}
-.modal.show{display:flex}
-.backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(3px)}
-.modal-card{width:92%;max-width:900px;border-radius:var(--radius-xl);overflow:hidden;display:flex;background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.12)}
-.modal-left{width:40%}
-.modal-left .placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--color-purple-50),var(--color-purple-200))}
-.modal-right{width:60%;padding:var(--space-7);position:relative}
-.modal-close{position:absolute;top:18px;right:18px;border:0;background:none;font-size:26px;cursor:pointer}
-.modal-ctas{display:flex;gap:var(--space-3)}
-
-/* utility */
-.container--narrow{max-width:1100px;margin:0 auto}
-@media(max-width:900px){
-  .hero{flex-direction:column}
-  .hero-side{width:100%}
-  .modal-card{flex-direction:column}
-  .modal-left{height:180px;width:100%}
-  .modal-right{width:100%}
+.hero-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
+.hero {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-side {
+  width: 320px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.side-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-width: 240px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-greyscale-200);
+  flex-shrink: 0;
+}
+
+
+/* ----------------------------------------------------
+   PROJECT CARDS
+----------------------------------------------------- */
+
+.projects {
+  margin-top: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.cover {
+  height: 280px;
+  background: var(--color-greyscale-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+}
+
+.card-body {
+  padding: var(--space-7);
+}
+
+.meta {
+  font-size: var(--fs-caption);
+  color: var(--color-muted);
+  margin-bottom: var(--space-3);
+}
+
+
+/* ----------------------------------------------------
+   MODAL (Contact)
+----------------------------------------------------- */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(3px);
+}
+
+.modal-card {
+  width: 92%;
+  max-width: 900px;
+  display: flex;
+  background: #fff;
+  border-radius: var(--radius-xxl);
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,.12);
+  position: relative;
+}
+
+.modal-left {
+  width: 40%;
+}
+
+.modal-left .placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-greyscale-200);
+}
+
+.modal-right {
+  width: 60%;
+  padding: var(--space-8);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 26px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.modal-ctas {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+
+/* ----------------------------------------------------
+   MOBILE NAVIGATION
+----------------------------------------------------- */
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Mobile nav panel */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(3px);
+  z-index: 150;
+  padding: var(--space-6);
+}
+
+.mobile-nav-panel {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 320px;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+}
+
+
+/* ----------------------------------------------------
+   RESPONSIVE RULES
+----------------------------------------------------- */
+
+@media (max-width: 1000px) {
+
+  /* Hero vertical */
+  .hero {
+    flex-direction: column;
+    gap: var(--space-10);
+  }
+
+  .hero-side {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* Modal vertical */
+  .modal-card {
+    flex-direction: column;
+  }
+
+  .modal-left {
+    width: 100%;
+    height: 180px;
+  }
+
+  .modal-right {
+    width: 100%;
+  }
+}
+
+
+/* -----------------------
+   Header responsiveness
+------------------------ */
+
+@media (max-width: 900px) {
+
+  /* Hide desktop nav */
+  .site-nav {
+    display: none;
+  }
+
+  /* Show burger */
+  .hamburger {
+    display: block;
+  }
+}
+
+
+/* -----------------------
+   Footer mobile
+------------------------ */
+
+@media (max-width: 900px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+}
