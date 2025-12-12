@@ -12,6 +12,7 @@
   display: flex;
   align-items: flex-start; /* PAS center, pour que le texte ne centre pas la chatbox */
   padding-top: 80px; /* espace sous navbar si nécessaire */
+  padding-right: 80px;
 }
 
 .container.hero {
@@ -23,7 +24,7 @@
 
 .hero-left {
   flex: 1;
-  max-width: 600px; /* limite largeur texte */
+  max-width: 800px; /* limite largeur texte */
 }
 
 .side-card-wrapper {
@@ -65,6 +66,7 @@
 
 .lead {
   margin-top: var(--space-4);
+  width: 100%;
 }
 
 .btn {
