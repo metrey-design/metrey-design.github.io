@@ -13,14 +13,46 @@ body{
 }
 
 /* container */
-.container{max-width:var(--content-max-w);margin:0 auto;padding:var(--space-5)}
+.container{
+  max-width:var(--content-max-w);
+  margin:0 auto;
+  padding:var(--space-5);
+}
 
 /* Typography utility classes */
-.h1{font-family:var(--font-heading-serif);font-size:var(--fs-h1);line-height:var(--fs-h1-line);margin:0 0 var(--space-5);font-weight:var(--fw-regular)}
-.h2{font-family:var(--font-ui);font-size:var(--fs-h2);line-height:var(--fs-h2-line);margin:0 0 var(--space-4);font-weight:var(--fw-bold)}
-.tagline{font-family:var(--font-ui);font-size:var(--fs-h3);font-weight:var(--fw-medium);text-transform:uppercase;letter-spacing:.06em;color:var(--color-muted);margin:0 0 var(--space-3)}
-.lead{font-size:var(--fs-body);color:var(--color-body);margin:0 0 var(--space-4);max-width:60ch}
-.caption{font-size:var(--fs-caption);color:var(--color-muted)}
+.h1{
+  font-family:var(--font-heading-serif);
+  font-size:var(--fs-h1);
+  line-height:var(--fs-h1-line);
+  margin:0 0 var(--space-5);
+  font-weight:var(--fw-regular);
+}
+.h2{
+  font-family:var(--font-ui);
+  font-size:var(--fs-h2);
+  line-height:var(--fs-h2-line);
+  margin:0 0 var(--space-4);
+  font-weight:var(--fw-bold);
+}
+.tagline{
+  font-family:var(--font-ui);
+  font-size:var(--fs-h3);
+  font-weight:var(--fw-medium);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--color-muted);
+  margin:0 0 var(--space-3);
+}
+.lead{
+  font-size:var(--fs-body);
+  color:var(--color-body);
+  margin:0 0 var(--space-4);
+  max-width:60ch;
+}
+.caption{
+  font-size:var(--fs-caption);
+  color:var(--color-muted);
+}
 
 /* Small utilities */
 .row{display:flex;gap:var(--space-4);align-items:center}
@@ -28,7 +60,14 @@ body{
 
 /* responsive typography adjustments */
 @media (max-width:900px){
-  :root{--fs-h1:34px;--fs-h1-line:40px;--fs-h2:24px;--fs-body:15px}
+  :root{
+    --fs-h1:34px;
+    --fs-h1-line:40px;
+    --fs-h2:24px;
+    --fs-body:15px;
+  }
+}  /* ← ← ← FINALLY CLOSED !! */
+
 
 /* ---------------------------------------
    GLOBAL LAYOUT : container, header, footer
@@ -41,7 +80,6 @@ body{
   margin: 0 auto;
   padding-inline: var(--space-4);
 }
-
 
 /* HEADER */
 .site-header {
@@ -75,7 +113,6 @@ body{
   gap: var(--space-4);
 }
 
-
 /* FOOTER */
 .footer {
   display: flex;
@@ -88,6 +125,4 @@ body{
 .footer .row {
   display: flex;
   gap: var(--space-5);
-}
-  
 }
