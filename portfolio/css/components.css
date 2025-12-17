@@ -28,6 +28,7 @@
 @media (max-width: 900px) {
   .hero-left {
     max-width: 100%;
+    order: 1;
   }
 }
 
@@ -36,6 +37,7 @@
     position: absolute;
     top: 96px; /* sous la navbar */
     right: 80px;
+    order: 2;
   }
 }
 
