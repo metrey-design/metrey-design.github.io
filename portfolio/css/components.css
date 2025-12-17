@@ -6,14 +6,16 @@
 /* ----------------------------------------------------
    HERO SECTION
 ----------------------------------------------------- */
-.hero-wrap {
+@media (min-width: 901px) {
+  .hero-wrap {
+  min-height: 100vh;
   position: relative; /* nécessaire pour le positionnement absolu */
-  min-height: auto;
   display: flex;
   align-items: flex-start; /* PAS center, pour que le texte ne centre pas la chatbox */
   padding-top: 80px; /* espace sous navbar si nécessaire */
   padding-bottom: var(--space-8);
   padding-right: 80px;
+  }
 }
 
 .container.hero {
@@ -29,11 +31,11 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (min-width: 901px) {
   .side-card-wrapper {
-    position: static;
-    margin-top: var(--space-6);
-    align-items: stretch;
+    position: absolute;
+    top: 96px; /* sous la navbar */
+    right: 80px;
   }
 }
 
@@ -57,9 +59,8 @@
 
 @media (max-width: 900px) {
   .hero-ctas {
-  display: flex;
   flex-direction: row;
-  flex-wrap: wrap; /* sécurité petits écrans */
+  flex-wrap: nowrap; /* sécurité petits écrans */
   gap: var(--space-3);
   margin-top: var(--space-5);
   }
